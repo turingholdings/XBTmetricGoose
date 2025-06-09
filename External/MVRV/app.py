@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 import dash
 from dash import dcc, html
 import pandas as pd
@@ -18,6 +15,8 @@ def get_mock_mvrv_data():
 
 # === Build Dash App ===
 app = dash.Dash(__name__)
+server = app.server  # <-- this is the important line for gunicorn
+
 app.title = "MVRV Z-Score"
 
 # Use mock data
@@ -43,9 +42,6 @@ app.layout = html.Div([
         }
     )
 ])
-
-# === Expose app for WSGI ===
-server = app.server
 
 # === Run Locally ===
 if __name__ == "__main__":
