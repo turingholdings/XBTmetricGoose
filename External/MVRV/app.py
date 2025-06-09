@@ -23,7 +23,8 @@ app.title = "MVRV Z-Score"
 mvrv_df, current_score = get_mock_mvrv_data()
 
 # === Layout ===
-app.layout = html.Div([
+app.layout = html.Div(style={"backgroundColor": "white", "padding": "20px"}, children=[
+
     html.H1("MVRV Z-Score", style={"textAlign": "center"}),
     html.H2(f"Current Value: {current_score}", style={"textAlign": "center", "color": "darkblue"}),
     dcc.Graph(
@@ -35,9 +36,13 @@ app.layout = html.Div([
                 "name": "MVRV Z-Score"
             }],
             "layout": {
-                "title": "Last 30 Days of MVRV Z-Score",
-                "xaxis": {"title": "Date"},
-                "yaxis": {"title": "Z-Score"},
+    "title": "Last 30 Days of MVRV Z-Score",
+    "plot_bgcolor": "white",
+    "paper_bgcolor": "white",
+    "xaxis": {"title": "Date"},
+    "yaxis": {"title": "Z-Score"},
+}
+
             }
         }
     )
