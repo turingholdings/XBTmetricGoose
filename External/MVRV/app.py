@@ -46,3 +46,5 @@ app.layout = html.Div([
 # === Run Locally ===
 if __name__ == "__main__":
     app.run(debug=True)
+server = app.server  # Expose the Dash server to Gunicorn
+
