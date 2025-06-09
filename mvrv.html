@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MVRV Z-Score Dashboard</title>
   <style>
+    :root {
+      --bg-color: #0a0a0a;
+      --text-color: #e0e0e0;
+      --accent-color: #00ffcc;
+      --header-color: #00e0ff;
+      --frame-border: #222;
+    }
+
     body {
       margin: 0;
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
+    header {
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--header-color);
+      text-shadow: 0 0 10px var(--accent-color);
+    }
+
     iframe {
       width: 100vw;
-      height: 100vh;
-      border: none;
+      height: 90vh;
+      border: 2px solid var(--frame-border);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>MVRV Z-Score Dashboard</h1>
+  </header>
   <iframe src="https://mvrv-vzi7.onrender.com" title="MVRV Dashboard"></iframe>
 </body>
 </html>
